@@ -1,0 +1,74 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block customcss %}
+    <link rel="stylesheet" href="{% static 'css/style-home.css' %}"/>
+{% endblock customcss %}
+
+{% block title %}
+    Home - BelajarOnline
+{% endblock title %}
+
+{% block content %}
+    <header class="masthead">
+        <div class="container h-100 title-text">
+            <div class="row h-100 align-items-center">
+                <div class="col text-center">
+                    <h1>Expand Your Knowledge</h1>
+                    <p>Be part of BelajarOnline now and explore tons of courses</p>
+                    <a class="btn btn-success custom-btn" href="{% url 'register' %}">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="product-category">
+        <div class="container-fluid">
+            <div class="category-title text-center">
+                <h1>Top Categories</h1>
+            </div>
+            <div class="row mx-auto">
+                <div class="col-lg-3">
+                    <a href="http://google.com" class="stretched-link">
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Card image cap">
+                        <div class="card-body">
+                            <a href="#" class="card-text stretched-link">Some quick example text to build on the card title and make up the bulk of the card's content.</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
+
+{% block customjs %}
+    <script src="{% static 'js/style-home.js' %}"></script>
+{% endblock customjs %}

@@ -1,0 +1,48 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block customcss %}
+    <link rel="stylesheet" href="{% static 'css/style-login.css' %}"/>
+{% endblock customcss %}
+
+{% block title %}
+   Register - BelajarOnline
+{% endblock title %}
+
+{% block content %}
+    <div class="login-section">
+        <div class="container-fluid">
+            <div class="login-title text-center">
+                <h3>Create your account now and start learning today</h3>
+                <p>Sign up to continue</p>
+            </div>
+            <div class="row justify-content-center">
+                    <div class="col-lg-4 mx-auto">
+                        <div class="text-center">
+                            <div class="social-login">
+                                <a href="#" class="btn btn-block btn-success" style="background-color: #4267B2;"><i class="fa fa-facebook pull-left"></i>Continue With Facebook</a>
+                                <a href="#" class="btn btn-block btn-success" style="background-color: #DB4437;"><i class="fa fa-google pull-left"></i>Continue With Google</a>
+                                <a href="#" class="btn btn-block btn-success" style="background-color: #000000;"><i class="fa fa-apple pull-left"></i>Continue With Apple</a>
+                            </div>
+                            <p>or</p>
+                            <form method="POST" class="register-form" action="">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    {{ form|crispy }}
+                                </div> 
+                                <div class="form-group form-button">
+                                    <input type="submit" name="signin" id="signin" class="btn btn-block btn-success" value="Log in"/>
+                                </div>
+                            </form>
+                            <hr style="width:100%;text-align:center;height:2px;border-width:0;color:gray;background-color:gray">
+                            <div class="login-title text-center">
+                                Already have an account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

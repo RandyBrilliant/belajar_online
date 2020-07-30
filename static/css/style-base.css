@@ -1,0 +1,107 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* navbar section */
+.bg-custom {
+    background-color: #002333;
+    height: 13vh;
+}
+
+.navbar-brand {
+    font-weight: 900;
+    font-size: 1.5rem;
+}
+
+.input-group input {
+    border-radius: 50px 0px 0px 50px;
+    width: 20rem !important;
+}
+
+.input-group button {
+    border-radius: 0px 50px 50px 0px;
+    background-color: #00ff84;
+}
+
+.input-group ::-webkit-input-placeholder {
+    font-size: 12px;
+}
+
+.nav-link {
+    color: white !important;
+    font-size: 0.9rem;
+}
+
+.nav-link:hover {
+    color: #00ff84 !important;
+}
+
+.login-btn {
+    width: 8rem;
+    color:#00ff84;
+    border-color: #00ff84;
+    background: transparent;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 0.9rem;
+    letter-spacing: 0.2rem;
+}
+
+.login-btn:hover {
+    background-color:#00ff84;
+    color:white;
+}
+
+/* footer section */
+footer {
+    color: #505962;
+    font-size: 12px;
+    
+}
+
+footer ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer h4{
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #00ff84;
+}
+
+footer .footer-menu-list {
+    background-color: #002333;
+    color: white;
+    padding: 30px;
+}
+
+.footer-menu-list li {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.footer-menu-list li a {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+
+.footer-menu-list li a:hover, .footer-logo:hover {
+    color: #00ff84;
+}
+
+.footer-logo {
+    margin-right: 20px;
+    color: white;
+}
+
+.col-copyright {
+    margin: 15px;
+}
+
+footer .row-copyright{
+    background-color: black;
+}

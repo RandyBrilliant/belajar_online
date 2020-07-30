@@ -1,0 +1,58 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block customcss %}
+    <link rel="stylesheet" href="{% static 'css/style-login.css' %}"/>
+{% endblock customcss %}
+
+{% block title %}
+   Login - BelajarOnline
+{% endblock title %}
+
+{% block content %}
+    <div class="login-section">
+        <div class="container-fluid">
+            <div class="login-title text-center">
+                <h3>Start explore and learning today</h3>
+                <p>Just log in to continue</p>
+            </div>
+            <div class="row justify-content-center">
+                    <div class="col-lg-4 mx-auto">
+                        <div class="text-center">
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <div class="alert alert-success" role="alert">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                            <div class="social-login">
+                                <a href="#" class="btn btn-block btn-success" style="background-color: #4267B2;"><i class="fa fa-facebook pull-left"></i>Continue With Facebook</a>
+                                <a href="#" class="btn btn-block btn-success" style="background-color: #DB4437;"><i class="fa fa-google pull-left"></i>Continue With Google</a>
+                                <a href="#" class="btn btn-block btn-success" style="background-color: #000000;"><i class="fa fa-apple pull-left"></i>Continue With Apple</a>
+                            </div>
+                            <p>or</p>
+                            <form method="POST" class="register-form" action="">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    {{ form|crispy }}
+                                    <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                                    <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                                </div> 
+                                <div class="form-group form-button">
+                                    <input type="submit" name="signin" id="signin" class="btn btn-block btn-success" value="Log in"/>
+                                </div>
+                            </form>
+                            <a class="text-muted text-left" href="#">Forget Password?</a>
+                            <hr style="width:100%;text-align:center;height:2px;border-width:0;color:gray;background-color:gray">
+                            <div class="login-title text-center">
+                                Did not have an account? <a class="ml-2" href="{% url 'register' %}">Create One!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,45 @@
+/* header section */
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://images.unsplash.com/photo-1485988412941-77a35537dae4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1972&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+  }
+
+.title-text h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+}
+
+.custom-btn {
+    background-color: #00ff84 !important;
+    color: #002333;
+    background: transparent;
+    height: 50px;
+    width: 250px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+}
+
+.custom-btn:hover {
+    opacity: 80%;
+    transition: 0.5s;
+}
+
+main {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.section-title {
+    margin-bottom: 50px;
+}
+
+.section-title h1 {
+    font-weight: 900;
+}
