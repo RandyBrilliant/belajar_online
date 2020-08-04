@@ -10,7 +10,7 @@
 {% endblock title %}
 
 {% block content %}
-    <header class="masthead">
+    <header class="masthead" style="background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{% static 'picture/home/Masthead.jpg' %}');">
         <div class="container h-100 title-text">
             <div class="row h-100 align-items-center">
                 <div class="col text-center">
@@ -25,43 +25,76 @@
     <section id="product-category">
         <div class="container-fluid">
             <div class="category-title text-center">
-                <h1>Top Categories</h1>
+                <h3 class="font-weight-bold">Top Categories</h3>
             </div>
-            <div class="row mx-auto">
-                <div class="col-lg-3">
-                    <a href="http://google.com" class="stretched-link">
-                        <div class="card" style="width: 18rem;">
-                            <img class="card-img-top" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Card image cap">
-                        <div class="card-body">
-                            <a href="#" class="card-text stretched-link">Some quick example text to build on the card title and make up the bulk of the card's content.</a>
+            <div class="row mx-auto my-auto justify-content-center align-items-center">
+                <div class="col-lg-3 mb-5">
+                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/WebDevelopment.jpg' %}')">
+                        <div class="overlay">
+                            <a class="card-title text-center font-weight-bold" href="#">Web Development</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="col-lg-3 mb-5">
+                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/Marketing.jpg' %}')">
+                        <div class="overlay">
+                            <a class="card-title text-center font-weight-bold" href="#">Marketing</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <div class="col-lg-3 mb-5">
+                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/ITnSoftware.jpg' %}')">
+                        <div class="overlay">
+                            <a class="card-title text-center font-weight-bold" href="#">IT & Software</a>
                         </div>
                     </div>
+                </div>
+                <div class="col-lg-3 mb-5">
+                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/PersonalDevelopment.jpg' %}')">
+                        <div class="overlay">
+                            <a class="card-title text-center font-weight-bold" href="#">Personal Development</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-5">
+                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/Business.jpg' %}')">
+                        <div class="overlay">
+                            <a class="card-title text-center font-weight-bold" href="#">Business</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-5">
+                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/Photography.jpg' %}')">
+                        <div class="overlay">
+                            <a class="card-title text-center font-weight-bold" href="#">Photography</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-5">
+                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/Music.jpg' %}')">
+                        <div class="overlay">
+                            <a class="card-title text-center font-weight-bold" href="#">Music</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-5">
+                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/Design.jpg' %}')">
+                        <div class="overlay">
+                            <a class="card-title text-center font-weight-bold" href="#">Design</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="parallax" style="background-image: url('{% static 'picture/home/forest.jpg' %}');">
+        <div class="container title-text">
+            <div class="row align-items-center">
+                <div class="col text-center">
+                    <h2>Get personal learning recommendation</h2>
+                    <p>Answer a few questions for our top picks</p>
+                    <a class="btn btn-outline-light parallax-btn" href="#">Get Started</a>
                 </div>
             </div>
         </div>

@@ -2,7 +2,6 @@
 .masthead {
     height: 100vh;
     min-height: 500px;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('https://images.unsplash.com/photo-1485988412941-77a35537dae4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1972&q=80');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -27,7 +26,7 @@
 }
 
 .custom-btn:hover {
-    opacity: 80%;
+    opacity: 95%;
     transition: 0.5s;
 }
 
@@ -42,4 +41,85 @@ main {
 
 .section-title h1 {
     font-weight: 900;
+}
+
+/* parallax section */
+.parallax {
+    /* Set a specific height */
+    min-height: 200px; 
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 30px;
+  }
+
+.parallax .title-text {
+    color: white;
+}
+
+.parallax h2 {
+    font-weight: bold;
+    margin-bottom: 3px;
+}
+
+.parallax-btn {
+    font-weight: bold;
+}
+
+.parallax-btn:hover {
+    background-color: #00ff84 !important;
+    color: white !important;
+    border-color: #00ff84 !important;
+    transition: 0.5s;
+}
+
+/* Course category section */
+#product-category {
+    margin: 30px;
+}
+
+.category-title {
+    margin: 30px;
+}
+
+.custom-card {
+    height: 23rem;
+    width: 18rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #00ff84;
+}
+  
+.custom-card:hover .overlay {
+    opacity: 95%;
+}
+  
+.card-title {
+    color:white !important;
+    position: absolute;
+    font-size: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+.custom-card a {
+    color: inherit;
+    text-decoration: none;
 }
