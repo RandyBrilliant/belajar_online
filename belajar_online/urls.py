@@ -34,7 +34,7 @@ urlpatterns = [
     path('register/', user_view.RegisterPage, name="register"),
     path('profile/settings/', user_view.profile, name="profile"),
     path('profile/password-change/', auth_views.PasswordChangeView.as_view(template_name="user/password_change.html"), name="password-change"),
-    path('profile/password-change-done/', auth_views.PasswordChangeDoneView.as_view(template_name="user/password_change_done.html"), name="password-change-done"),
+    path('profile/password-change-done/', auth_views.PasswordChangeDoneView.as_view(template_name="user/password_change_done.html"), name="password_change"),
 ]
 
 if settings.DEBUG:
