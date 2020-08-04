@@ -44,7 +44,7 @@
                                     <input type="submit" name="signin" id="signin" class="btn btn-block btn-success" value="Log in"/>
                                 </div>
                             </form>
-                            <a class="text-muted text-left" href="#">Forget Password?</a>
+                            <a class="text-muted text-left" href="{% url 'password_reset' %}">Forget Password?</a>
                             <hr style="width:100%;text-align:center;height:2px;border-width:0;color:gray;background-color:gray">
                             <div class="login-title text-center">
                                 Did not have an account? <a class="ml-2" href="{% url 'register' %}">Create One!</a>
