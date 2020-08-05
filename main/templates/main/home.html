@@ -10,83 +10,50 @@
 {% endblock title %}
 
 {% block content %}
-    <header class="masthead" style="background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{% static 'picture/home/Masthead.jpg' %}');">
-        <div class="container h-100 title-text">
-            <div class="row h-100 align-items-center">
-                <div class="col text-center">
-                    <h1>Expand Your Knowledge</h1>
-                    <p>Be part of BelajarOnline now and explore tons of courses</p>
-                    <a class="btn btn-success custom-btn" href="{% url 'register' %}">Get Started</a>
+
+    {% if not user.is_authenticated %}
+        <header class="masthead" style="background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{% static 'picture/home/Masthead.jpg' %}');">
+            <div class="container h-100 title-text">
+                <div class="row h-100 align-items-center">
+                    <div class="col text-center">
+                        <h1>Expand Your Knowledge</h1>
+                        <p>Be part of BelajarOnline now and explore tons of courses</p>
+                        <a class="btn btn-success custom-btn" href="{% url 'register' %}">Get Started</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
+    {% endif %}
 
-    <section id="product-category">
+    <section class="course-section">
         <div class="container-fluid">
             <div class="category-title text-center">
-                <h3 class="font-weight-bold">Top Categories</h3>
+                <h3 class="font-weight-bold">Top Course</h3>
             </div>
-            <div class="row mx-auto my-auto justify-content-center align-items-center">
-                <div class="col-lg-3 mb-5">
-                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/WebDevelopment.jpg' %}')">
-                        <div class="overlay">
-                            <a class="card-title text-center font-weight-bold" href="#">Web Development</a>
+            <div class="row" style="margin-bottom:30px;">
+                {% for course in courses|slice:":4" %}
+                    <div class="col-lg-3 my-auto">
+                        <div class="card" style="width: 18rem; margin-bottom: 30px;">
+                            <img class="card-img-top" src="{{course.imageURL}}">
+                            <div class="card-body">
+                                <h6 style="height: 3.5rem;"><strong>{{ course.title }}</strong></h6>
+                                <div class="row">
+                                    <img src="{{ course.instructor.profile.image.url }}" width="40" height="40" class="rounded-circle" style="margin:10px;">
+                                    <p class="my-auto">{{ course.instructor.first_name }} {{ course.instructor.last_name }}</p>
+                                </div>
+                                <hr>
+                                <a class="btn btn-outline-success stretched-link" href="{% url 'course-detail' course.id %}">View</a>
+                                <h4 style="display: inline-block; float: right;"><strong>Rp.{{ course.price }}</strong></h4>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 mb-5">
-                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/Marketing.jpg' %}')">
-                        <div class="overlay">
-                            <a class="card-title text-center font-weight-bold" href="#">Marketing</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-5">
-                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/ITnSoftware.jpg' %}')">
-                        <div class="overlay">
-                            <a class="card-title text-center font-weight-bold" href="#">IT & Software</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-5">
-                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/PersonalDevelopment.jpg' %}')">
-                        <div class="overlay">
-                            <a class="card-title text-center font-weight-bold" href="#">Personal Development</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-5">
-                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/Business.jpg' %}')">
-                        <div class="overlay">
-                            <a class="card-title text-center font-weight-bold" href="#">Business</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-5">
-                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/Photography.jpg' %}')">
-                        <div class="overlay">
-                            <a class="card-title text-center font-weight-bold" href="#">Photography</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-5">
-                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/Music.jpg' %}')">
-                        <div class="overlay">
-                            <a class="card-title text-center font-weight-bold" href="#">Music</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 mb-5">
-                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/Design.jpg' %}')">
-                        <div class="overlay">
-                            <a class="card-title text-center font-weight-bold" href="#">Design</a>
-                        </div>
-                    </div>
-                </div>
+                {% endfor %}
+	        </div>
+            <div class="text-center" style="margin-bottom:30px;">  
+                <a class="btn btn-success custom-btn" href="{% url 'courses-page' %}">Browse More</a>
             </div>
         </div>
-    </section>
+    <section>
 
     <section class="parallax" style="background-image: url('{% static 'picture/home/forest.jpg' %}');">
         <div class="container title-text">
@@ -100,8 +67,72 @@
         </div>
     </section>
 
-{% endblock content %}
+    <section id="product-category">
+        <div class="container-fluid">
+            <div class="category-title text-center">
+                <h3 class="font-weight-bold">Top Categories</h3>
+            </div>
+            <div class="row mx-auto my-auto justify-content-center align-items-center">
+                <div class="col-lg-3 mb-5">
+                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/WebDevelopment.jpg' %}')">
+                        <div class="overlay">
+                            <a class="card-title text-center font-weight-bold" href="{% url 'courses-page' %}">Web Development</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-5">
+                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/Marketing.jpg' %}')">
+                        <div class="overlay">
+                            <a class="card-title text-center font-weight-bold" href="{% url 'courses-page' %}">Marketing</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-5">
+                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/ITnSoftware.jpg' %}')">
+                        <div class="overlay">
+                            <a class="card-title text-center font-weight-bold" href="{% url 'courses-page' %}">IT & Software</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-5">
+                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/PersonalDevelopment.jpg' %}')">
+                        <div class="overlay">
+                            <a class="card-title text-center font-weight-bold" href="{% url 'courses-page' %}">Personal Development</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-5">
+                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/Business.jpg' %}')">
+                        <div class="overlay">
+                            <a class="card-title text-center font-weight-bold" href="{% url 'courses-page' %}">Business</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-5">
+                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/Photography.jpg' %}')">
+                        <div class="overlay">
+                            <a class="card-title text-center font-weight-bold" href="{% url 'courses-page' %}">Photography</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-5">
+                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/Music.jpg' %}')">
+                        <div class="overlay">
+                            <a class="card-title text-center font-weight-bold" href="{% url 'courses-page' %}">Music</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 mb-5">
+                    <div class="card custom-card custom-card-category" style="background-image:url('{% static 'picture/home/Design.jpg' %}')">
+                        <div class="overlay">
+                            <a class="card-title text-center font-weight-bold" href="{% url 'courses-page' %}">Design</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-{% block customjs %}
-    <script src="{% static 'js/style-home.js' %}"></script>
-{% endblock customjs %}
+    
+
+{% endblock content %}

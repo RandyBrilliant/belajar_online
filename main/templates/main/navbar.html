@@ -18,23 +18,23 @@
                     Course Categories
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Web Development</a>
-                    <a class="dropdown-item" href="#">Marketing</a>
-                    <a class="dropdown-item" href="#">IT & Software</a>
-                    <a class="dropdown-item" href="#">Personal Development</a>
-                    <a class="dropdown-item" href="#">Business</a>
-                    <a class="dropdown-item" href="#">Photography</a>
-                    <a class="dropdown-item" href="#">Music</a>
-                    <a class="dropdown-item" href="#">Design</a>
+                    <a class="dropdown-item" href="{% url 'courses-page' %}">Web Development</a>
+                    <a class="dropdown-item"    href="{% url 'courses-page' %}">Marketing</a>
+                    <a class="dropdown-item" href="{% url 'courses-page' %}">IT & Software</a>
+                    <a class="dropdown-item" href="{% url 'courses-page' %}">Personal Development</a>
+                    <a class="dropdown-item" href="{% url 'courses-page' %}">Business</a>
+                    <a class="dropdown-item" href="{% url 'courses-page' %}">Photography</a>
+                    <a class="dropdown-item" href="{% url 'courses-page' %}">Music</a>
+                    <a class="dropdown-item" href="{% url 'courses-page' %}">Design</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item font-weight-bold" href="#">Browse More</a>
+                    <a class="dropdown-item font-weight-bold" href="{% url 'courses-page' %}">Browse More</a>
                 </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">About Us</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contact Us</a>
+                <a class="nav-link" href="{% url 'contact-us' %}">Contact Us</a>
             </li>
         </ul>
         {% if user.is_authenticated %}

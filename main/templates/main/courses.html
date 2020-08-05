@@ -1,0 +1,55 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block customcss %}
+    <link rel="stylesheet" href="{% static 'css/style-home.css' %}"/>
+{% endblock customcss %}
+
+{% block title %}
+    Courses - BelajarOnline
+{% endblock title %}
+
+{% block content %}
+
+    <section class="course-section">
+        <div class="container-fluid">
+            <div class="category-title text-center">
+                <h3 class="font-weight-bold">Courses List</h3>
+            </div>
+            <div class="row" style="margin-bottom:30px;">
+                {% for course in courses %}
+                    <div class="col-lg-3 my-auto">
+                        <div class="card" style="width: 18rem; margin-bottom: 30px;">
+                            <img class="card-img-top" src="{{course.imageURL}}">
+                            <div class="card-body">
+                                <h6 style="height: 3.5rem;"><strong>{{ course.title }}</strong></h6>
+                                <div class="row">
+                                    <img src="{{ course.instructor.profile.image.url }}" width="40" height="40" class="rounded-circle" style="margin:10px;">
+                                    <p class="my-auto">{{ course.instructor.first_name }} {{ course.instructor.last_name }}</p>
+                                </div>
+                                <hr>
+                                <a class="btn btn-outline-success stretched-link" href="{% url 'course-detail' course.id %}">View</a>
+                                <h4 style="display: inline-block; float: right;"><strong>Rp.{{ course.price }}</strong></h4>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+	        </div>
+        </div>
+    <section>
+
+    <section class="parallax" style="background-image: url('{% static 'picture/home/forest.jpg' %}');">
+        <div class="container title-text">
+            <div class="row align-items-center">
+                <div class="col text-center">
+                    <h2>Get personal learning recommendation</h2>
+                    <p>Answer a few questions for our top picks</p>
+                    <a class="btn btn-outline-light parallax-btn" href="#">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+{% endblock content %}

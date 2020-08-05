@@ -1,0 +1,78 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block customcss %}
+    <link rel="stylesheet" href="{% static 'css/style-contact-us.css' %}"/>
+{% endblock customcss %}
+
+{% block title %}
+    Contact Us - BelajarOnline
+{% endblock title %}
+
+{% block content %}
+    <div id="map"></div>
+    <script>
+        function initMap() {
+        // The location of Uluru
+        var uluru = {lat: -25.344, lng: 131.036};
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 4, center: uluru});
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({position: uluru, map: map});
+        }
+    </script>
+    <!-- end of address marker section -->
+
+    <!-- main section -->
+    <div id="main">
+        <div class="container my-custom-container">
+            <div class='row head-caption-row'>
+                <div class='col-lg-6 col-md-6 my-col'>
+                    <h3>Don't be a stranger</h3>
+                    <p>Just say hello.</p>
+                </div>
+            </div>
+            <div class='row content-caption-row'>
+                <div class='col-lg-6 col-md-6 my-col'>
+                    <p>Feel free to get in touch with us. If you have any inquiry regarding
+                       the printing quality and wanted to use our services, we are available
+                       for you to contact.
+                    </p>
+                    </br>
+                    <p>Need help?</p>
+                    <a href="mailto:example@gmail.com">example@gmail.com</a>
+                    </br></br>
+                    <p>Feel like talking?</p>
+                    <a href="tel:+626100001111">+62 61 0000 1111</a>
+                    </br></br>
+                    <p>Want to visit us?</p>
+                    <p style="color: #132B25;">
+                       Thamrin St. 22</br>
+                       Kecamatan Harjosari II</br>
+                       Kelurahan Harimau</br>
+                       Medan, 20235</br>
+                       Sumatera Utara, Indonesia
+                    </p>
+                    </br>
+                    <p>Social Media</p>
+                    <a class="logo-social-media" href="#"><i class="fa fa-instagram fa-2x"></i></a>
+                    <a class="logo-social-media" href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                    <a class="logo-social-media" href="#"><i class="fa fa-whatsapp fa-2x"></i></a>
+                    <a class="logo-social-media" href="#"><i class="fa fa-twitter fa-2x"></i></a>
+                    <a class="logo-social-media" href="#"><i class="fa fa-youtube fa-2x"></i></a>
+                </div>
+                <div class='col-lg-6 col-md-6 my-col'>
+                    <form>
+                        <input type="text" id="name" name="name" placeholder="Name" required>
+                        <input type="text" id="email" name="email" placeholder="Email" required>
+                        <textarea id="subject" name="subject" placeholder="Description" style="height:200px" required></textarea>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end of main section -->
+{% endblock content %}

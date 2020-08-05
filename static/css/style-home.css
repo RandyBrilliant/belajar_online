@@ -15,6 +15,7 @@
 
 .custom-btn {
     background-color: #00ff84 !important;
+    border-color: transparent !important;
     color: #002333;
     background: transparent;
     height: 50px;
@@ -42,6 +43,12 @@ main {
 .section-title h1 {
     font-weight: 900;
 }
+
+/* Course section */
+.course-section{
+    margin-bottom: 50px;
+}
+
 
 /* parallax section */
 .parallax {
