@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.urls import reverse
 from PIL import Image
 
 # Create your models here.
@@ -30,6 +31,11 @@ class Course(models.Model):
             output_size = (578, 324)
             img.thumbnail(output_size)
             img.save(self.course_image.path)
+
+    def get_absolute_url(self):
+        return reverse('course-created-for-you')
+
+
 
     @property
     def imageURL(self):

@@ -40,7 +40,7 @@ body {
     margin-bottom: 50px;
 }
 
-input[type=text], select, textarea {
+.form-contact input[type=text], select, textarea {
     width: 100%; /* Full width */
     padding: 12px; /* Some padding */ 
     border: 1px solid #ccc; /* Gray border */
@@ -52,7 +52,7 @@ input[type=text], select, textarea {
   }
   
 /* Style the submit button with a specific background color etc */
-input[type=submit] {
+.form-contact input[type=submit] {
     background-color: transparent;
     color: #132B25;
     padding: 12px 20px;
@@ -65,7 +65,7 @@ input[type=submit] {
   }
   
   /* When moving the mouse over the submit button, add a darker green color */
-  input[type=submit]:hover {
+.form-contact input[type=submit]:hover {
     background-color: #132B25;
     border-color: #132B25;
     color: white;
@@ -81,7 +81,7 @@ input[type=submit] {
         font-size: 30px;
     }
 
-    input[type=submit] {
+    .form-contact input[type=submit] {
         width: 100%;
     }
 

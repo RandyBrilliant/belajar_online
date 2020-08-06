@@ -1,9 +1,12 @@
 from django.shortcuts import render
 from .models import Course
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import (
     ListView,
-    DetailView
+    DetailView,
+    CreateView
 )
+
 
 # Create your views here.
 class CourseListView(ListView):
@@ -26,5 +29,16 @@ class CoursesListView(ListView):
     context_object_name = 'courses'
     ordering = ['-date_posted']
 
+class CourseCreateView(LoginRequiredMixin, CreateView):
+    model = Course
+    fields = ['title', 'description', 'price', 'course_image', 'preview_video']
+
+    def form_valid(self, form):
+        form.instance.instructor = self.request.user
+        return super().form_valid(form)
+
 def contactPage(request):
     return render(request, "main/contact-us.html",{})
+
+def createdCoursePage(request):
+    return render(request, "main/course-created.html",{})

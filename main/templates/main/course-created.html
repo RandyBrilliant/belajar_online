@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+   Course Submitted | BelajarOnline
+{% endblock title %}
+
+{% block content %}
+    <div class="login-section">
+        <div class="container-fluid">
+            <div class="login-title text-center">
+                <div class="alert alert-success" role="alert">
+                    You have successfully submit and upload your course! We will evaluate your course
+                    and notify you if it has been accepted!
+                </div>
+                <div class="login-title text-center">
+                    <a class="ml-2" href="{% url 'courses-page' %}">Course Page</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
